@@ -5,6 +5,12 @@ void setup() {
 }
 void loop() {
  while (!Serial.available());
- x = Serial.readString().toInt();
- Serial.println(x + 1);
+ x = Serial.read();
+ if(x == '5'){
+   Serial.write("yes");
+
+ } else {
+ Serial.write(x); 
+ }
+ Serial.println();
 }
